@@ -1,0 +1,124 @@
+/* Pastel color palette */
+:root {
+    --pastel-pink: #E6DAC3;
+    --pastel-blue: #87CEEB;
+    --pastel-yellow: #F7DC6F;
+    --pastel-green: #C6E2B5;
+    --accent-pink: #FF69B4;
+    --accent-blue: #34A8FF;
+    --accent-yellow: #F2C464;
+    --accent-green: #8BC34A;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F7F7F7;
+}
+
+header {
+    background-color: var(--pastel-blue);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--accent-blue);
+}
+
+nav a.active {
+    color: var(--accent-blue);
+    font-weight: bold;
+}
+
+main {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+
+
+#youtube-url {
+    padding: 1rem;
+    font-size: 1.5rem;
+    width: 50%;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#download-btn {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 10px;
+    width: fit-content;
+    background-color: var(--pastel-pink);
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#download-btn:hover {
+    background-color: var(--accent-pink);
+}
+
+#success-alert {
+    background-color: var(--pastel-green);
+    border : 1px solid var(--accent-green);
+    padding : 0.2rem 1rem;
+    animation: pulse 1s ;
+}
+
+  
+  @keyframes pulse {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }

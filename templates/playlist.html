@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Audio Downloader</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/" >Single Download</a></li>
+                <li><a href="/playlist" class="active">Playlist Download</a></li>
+                <li><a href="#">Batch Download</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form method="post" action="">
+            <input onfocus="this.value=''" type="text" id="youtube-url" name="youtube_url" placeholder="Enter YouTube Playlist URL">
+            <button type="submit" id="download-btn">Download</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul>
+            {% for message in messages %}
+            <div id="success-alert" class="alert">
+                <p>{{ message }}</p>
+            </div>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </main>
+    <script>
+        if (document.getElementById('sucess-alert')) {
+            setTimeout(() => {document.getElementById('success-alert').style.display = 'none'}, 300)
+        }
+    </script>
+</body>
+</html>
